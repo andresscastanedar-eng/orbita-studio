@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orbita Studio | Páginas web y Community Management</title>
+<meta name="description" content="Orbita Studio: páginas web y Community Management para negocios que quieren crecer en internet.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--alt:#f6f7f9;--card:#fff;--line:#e6e8ee;--tx:#0f172a;--mut:#5b6478;--ac:#2347e6;--acs:#eef1ff;--ok:#0f9d6b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{--bg:#0d1017;--alt:#131722;--card:#171c29;--line:#262c3d;--tx:#eef0f6;--mut:#9aa3b8;--ac:#6f8bff;--acs:#1c2440;--ok:#38d39f}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.65 'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;transition:background .25s,color .25s}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.025em;font-weight:700}
+a{color:inherit;text-decoration:none}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}.alt{background:var(--alt)}
+.tag{color:var(--ac);font-weight:600;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:8px 0 12px}
+.sub{color:var(--mut);max-width:620px;margin:0 0 36px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font:600 .95rem inherit;font-family:inherit;border:1px solid var(--ac);cursor:pointer;background:var(--ac);color:#fff;transition:opacity .2s,transform .2s}
+:root[data-theme="dark"] .btn{color:#0d1017}
+.btn:hover{opacity:.9;transform:translateY(-1px)}
+.btn.o{background:transparent;color:var(--tx);border-color:var(--line)}
+.btn.wa{background:#1fa855;border-color:#1fa855;color:#fff}
+.btn.sm{padding:8px 16px;font-size:.88rem}
+nav{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .w{display:flex;justify-content:space-between;align-items:center;height:64px;gap:14px}
+.logo{font-weight:800;font-size:1.15rem;display:flex;gap:9px;align-items:center;letter-spacing:-.02em}
+.dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--ac);position:relative}
+.dot::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--ac);top:-4px;right:-1px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:.92rem;font-weight:500;color:var(--mut)}
+nav ul a:hover{color:var(--tx)}
+@media(max-width:720px){nav ul{display:none}}
+.nr{display:flex;gap:10px;align-items:center}
+#th{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--tx);cursor:pointer;font-size:1.05rem}
+.hero{text-align:center;padding:104px 0 88px}
+.hero h1{font-size:clamp(2.3rem,6vw,4rem);max-width:820px;margin:16px auto;letter-spacing:-.035em;font-weight:800}
+.hero h1 span{color:var(--ac)}
+.hero p{color:var(--mut);max-width:560px;margin:0 auto 32px;font-size:1.1rem}
+.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.stats{display:flex;gap:44px;justify-content:center;margin-top:56px;flex-wrap:wrap;color:var(--mut);font-size:.88rem}
+.stats b{display:block;font-size:1.5rem;color:var(--tx);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.card h3{font-size:1.25rem;margin:10px 0 6px}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--acs);display:grid;place-items:center;font-size:1.3rem}
+.card ul{padding:0;list-style:none;margin:14px 0 0;color:var(--mut);font-size:.93rem}
+.card li{padding:4px 0 4px 22px;position:relative}
+.card li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.tab{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--mut);cursor:pointer;font:500 .92rem inherit;font-family:inherit}
+.tab.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.pane{display:none}.pane.on{display:block}
+.frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
+.bar{display:flex;gap:6px;align-items:center;padding:11px 16px;border-bottom:1px solid var(--line);background:var(--alt);font-size:.8rem;color:var(--mut)}
+.bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}.bar span{margin-left:10px;flex:1}
+.pv{display:grid;grid-template-columns:1fr 1.5fr}
+@media(max-width:760px){.pv{grid-template-columns:1fr}}
+.info{padding:28px}.info ul{padding:0;margin:14px 0 22px;list-style:none;color:var(--mut);font-size:.93rem}
+.info li{padding:4px 0 4px 22px;position:relative}.info li::before{content:"→";position:absolute;left:0;color:var(--ac)}
+.ph{min-height:300px;display:grid;place-items:center;text-align:center;color:var(--mut);padding:24px;background:var(--alt);font-size:.9rem}
+iframe{width:100%;height:440px;border:0;display:block;background:#fff}
+.sel{display:inline-flex;border:1px solid var(--line);border-radius:12px;padding:4px;background:var(--card);margin-bottom:22px;flex-wrap:wrap;gap:2px}
+.sel button{border:0;background:none;color:var(--mut);padding:8px 16px;border-radius:9px;cursor:pointer;font:500 .88rem inherit;font-family:inherit}
+.sel button.on{background:var(--acs);color:var(--ac);font-weight:700}
+.plan{position:relative;display:flex;flex-direction:column}
+.plan.pop{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac)}
+.pill{position:absolute;top:-11px;right:18px;background:var(--ac);color:#fff;font-size:.72rem;font-weight:600;padding:3px 11px;border-radius:999px}
+:root[data-theme="dark"] .pill{color:#0d1017}
+.plan small.s{color:var(--mut)}
+.price{font-size:2.3rem;font-weight:800;letter-spacing:-.03em;margin:12px 0 0}
+.price small{font-size:.85rem;font-weight:500;color:var(--mut);letter-spacing:0}
+.plan ul{flex:1;margin-bottom:20px}
+.mx{margin:14px 0 0;padding:11px 13px;border-radius:10px;background:var(--alt);font-size:.85rem;color:var(--mut)}
+.mx b{color:var(--tx)}
+.note{color:var(--mut);font-size:.85rem;margin-top:22px}
+.cta .grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px;align-items:start}
+form{display:grid;gap:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.two{grid-template-columns:1fr}}
+label{font-size:.82rem;font-weight:500;color:var(--mut);display:block;margin-bottom:4px}
+input,select,textarea{width:100%;padding:12px 13px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--tx);font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:-1px}
+#ok{display:none;color:var(--ok);font-weight:600;font-size:.92rem}
+.prow{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:22px}.prow .tabs,.prow .sel{margin:0}.sel small{font-size:.7rem;color:var(--ok);font-weight:700;margin-left:4px}
+footer{text-align:center;color:var(--mut);padding:30px 20px;border-top:1px solid var(--line);font-size:.86rem}
+</style>
+</head>
+<body>
+<nav><div class="w"><a href="#inicio" class="logo"><span class="dot"></span>Orbita Studio</a>
+<ul><li><a href="#servicios">Servicios</a></li><li><a href="#portafolio">Portafolio</a></li><li><a href="#planes">Planes</a></li><li><a href="#contacto">Contacto</a></li></ul>
+<div class="nr"><button id="th" aria-label="Cambiar tema">🌙</button><a class="btn sm" href="#contacto">Cotizar</a></div></div></nav>
+
+<header class="hero" id="inicio"><div class="w">
+<span class="tag">Páginas web · Community Management</span>
+<h1>Hacemos que tu negocio <span>crezca en internet</span></h1>
+<p>Diseñamos páginas web que generan clientes y gestionamos tus redes sociales para que tu marca esté siempre presente.</p>
+<div class="row"><a class="btn wa" id="waHero" target="_blank" rel="noopener" href="#">Escríbenos por WhatsApp</a><a class="btn o" href="#contacto">Pedir cotización</a></div>
+<div class="stats"><div><b>Web + Redes</b>un solo equipo</div><div><b>100%</b>adaptable a móvil</div><div><b>&lt; 24 h</b>respuesta a tu consulta</div></div>
+</div></header>
+
+<section id="servicios" class="alt"><div class="w">
+<span class="tag">Servicios</span><h2>Dos servicios que se potencian</h2><p class="sub">Una web que convierte y redes que llevan visitas a ella. Contrátalos por separado o en combo.</p>
+<div class="grid g2">
+<div class="card"><div class="ico">💻</div><h3>Desarrollo Web</h3><p style="color:var(--mut);margin:0">Sitios rápidos, claros y pensados para generar clientes.</p><ul><li>Landing pages y sitios corporativos</li><li>Blogs con CMS autogestionable y SEO</li><li>Web apps a medida con perfiles e interacción</li><li>Mantenimiento mensual opcional</li></ul></div>
+<div class="card"><div class="ico">📱</div><h3>Community Management</h3><p style="color:var(--mut);margin:0">Presencia constante, profesional y alineada a tu marca.</p><ul><li>Publicaciones, carruseles, Reels y Stories</li><li>Copywriting y hashtags estratégicos</li><li>Moderación y respuesta a comentarios y DMs</li><li>Diseño con la línea gráfica de tu marca</li></ul></div>
+</div></div></section>
+
+<section id="portafolio"><div class="w">
+<span class="tag">Portafolio</span><h2>Proyectos reales, en vivo</h2><p class="sub">Explora dos proyectos desarrollados por Orbita Studio.</p>
+<div class="tabs"><button class="tab on" data-p="p1">Proyecto 1 · El Blog</button><button class="tab" data-p="p2">Proyecto 2 · Red Social</button></div>
+<div id="p1" class="pane on"></div><div id="p2" class="pane"></div>
+</div></section>
+
+<section id="planes" class="alt"><div class="w">
+<span class="tag">Planes y precios</span><h2>Elige cómo quieres crecer</h2><p class="sub">Precios en USD. Combina una web con Community Management y ahorra frente a contratarlos por separado.</p>
+<div class="prow"><div class="tabs" id="mt"><button class="tab on" data-m="web">Solo Web / Combo</button><button class="tab" data-m="cm">Solo Redes</button></div><div class="sel" id="bill"></div></div>
+<div id="m-web"><div class="sel" id="addon"></div><div class="grid" id="webg"></div>
+<p class="note">Pago único de creación. Mantenimiento web opcional. Los descuentos por pago trimestral o anual aplican a los pagos recurrentes (mantenimiento y Community Management). El CM Básico incluye 8 posts/mes + diseños; el CM Pro incluye 12 posts + historias + Reels.</p></div>
+<div id="m-cm" style="display:none"><div class="grid" id="cmg"></div><p class="note">Precio mensual. Los planes de Community Management incluyen diseño, redacción y programación de contenido.</p></div>
+</div></section>
+
+<section class="cta" id="contacto"><div class="w"><div class="grid">
+<div><span class="tag">Hablemos</span><h2>Agenda una llamada o pide tu cotización</h2><p class="sub" style="margin-bottom:22px">Cuéntanos de tu negocio y te respondemos en menos de 24 horas con una propuesta a tu medida.</p><a class="btn wa" id="waCta" target="_blank" rel="noopener" href="#">Prefiero WhatsApp directo</a></div>
+<form id="f" onsubmit="return false"><div class="two"><div><label>Nombre</label><input id="fn" required></div><div><label>Negocio</label><input id="fb"></div></div>
+<div class="two"><div><label>WhatsApp / Teléfono</label><input id="ft" required></div><div><label>Correo</label><input id="fe" type="email"></div></div>
+<div class="two"><div><label>Me interesa</label><select id="pl"></select></div><div><label>Solicitud</label><select id="ty"><option>Cotización personalizada</option><option>Agendar llamada</option></select></div></div>
+<div><label>Cuéntanos tu proyecto</label><textarea id="fm" rows="3"></textarea></div>
+<div class="row" style="justify-content:flex-start"><button class="btn" id="sm">Enviar por correo</button><button class="btn o" id="sw">Enviar por WhatsApp</button></div>
+<div id="ok"></div></form>
+</div></div></section>
+<footer>© 2026 Orbita Studio · Páginas web y Community Management</footer>
+
+<script>
+const WA="50239221698", MAIL="andresscastanedar@gmail.com";
+/* ▼ PORTAFOLIO: pega aquí los enlaces de tus dos páginas ▼ */
+const PROJ=[
+ {url:"https://laesferacapital.wordpress.com/",name:"El Blog",host:"laesferacapital.wordpress.com",pts:["Estética cuidada y lectura cómoda","Redacción y estructura de artículos","SEO: títulos, URLs y metadatos"]},
+ {url:"https://strofa-first-deploy.vercel.app/feed.html",name:"La Red Social",host:"strofa.space",pts:["Perfiles de usuario","Publicaciones y comentarios","Lógica de usuario e interactividad"]}];
+const $=id=>document.getElementById(id), wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+$("waHero").href=wa("Hola Orbita Studio, quiero hacer crecer mi negocio en internet.");
+$("waCta").href=wa("Hola Orbita Studio, me gustaría una cotización.");
+/* tema */
+const root=document.documentElement,th=$("th");
+function setT(t){root.dataset.theme=t;th.textContent=t==="dark"?"☀️":"🌙";try{localStorage.setItem("os-theme",t)}catch(e){}}
+try{const s=localStorage.getItem("os-theme");if(s)setT(s)}catch(e){}
+th.onclick=()=>setT(root.dataset.theme==="dark"?"light":"dark");
+/* tabs */
+function tabs(sel,fn){document.querySelectorAll(sel).forEach(b=>b.onclick=()=>{b.parentNode.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));b.classList.add("on");fn(b)})}
+tabs("[data-p]",b=>{document.querySelectorAll(".pane").forEach(x=>x.classList.remove("on"));$(b.dataset.p).classList.add("on")});
+tabs("[data-m]",b=>{$("m-web").style.display=b.dataset.m==="web"?"block":"none";$("m-cm").style.display=b.dataset.m==="cm"?"block":"none"});
+/* portafolio */
+PROJ.forEach((p,i)=>{$("p"+(i+1)).innerHTML=`<div class="frame"><div class="bar"><i></i><i></i><i></i><span>🔒 ${p.url?p.url.replace(/^https?:\/\//,""):p.host}</span></div>
+<div class="pv"><div class="info"><h3>${p.name}</h3><ul>${p.pts.map(x=>`<li>${x}</li>`).join("")}</ul>${p.url?`<a class="btn" target="_blank" rel="noopener" href="${p.url}">Abrir proyecto ↗</a>`:""}</div>
+${p.url?`<iframe src="${p.url}" title="${p.name}" loading="lazy"></iframe>`:`<div class="ph">.<br></div>`}</div></div>`});
+/* planes */
+const web=[
+{n:"Básico",s:"Landing Page",t:"Landing page de 1 sola página con secciones de desplazamiento.",f:"Captación rápida de clientes vía WhatsApp o llamadas.",p:150,m:20},
+{n:"Pyme",s:"Corporativo",t:"Web de 3 a 5 secciones: Inicio, Servicios, Galería, Contacto.",f:"Presencia institucional sólida y generación de confianza.",p:300,m:30},
+{n:"Dinámico",s:"Web + Blog",t:"Sitio completo con CMS autogestionable y módulo de blog.",f:"Posicionamiento SEO, contenido constante y autoridad.",p:500,m:45,pop:1},
+{n:"Plataforma",s:"Custom",t:"Web app con base de datos, perfiles e interacción.",f:"Funcionalidad a medida: red social, catálogo o portal.",p:900,m:60,plus:1}];
+const adds=[{k:"Solo web",c:0,d:""},{k:"+ CM Básico",c:100,d:"8 posts/mes + diseños"},{k:"+ CM Pro",c:180,d:"12 posts + historias + Reels"},{k:"+ CM Marca 360°",c:340,d:"16 posts + 4 a 6 Reels + historias + DMs"}];
+const B=[{k:"Mensual",n:1,f:1,l:"mes"},{k:"Trimestral",n:3,f:.95,l:"trimestre",b:"-5%"},{k:"Anual",n:12,f:10/12,l:"año",b:"2 meses gratis"}];let bi=0;
+const chg=x=>Math.round(x*B[bi].n*B[bi].f),fmt=x=>`$${chg(x)}/${B[bi].l}`+(B[bi].n>1?` (≈ $${Math.round(x*B[bi].f)}/mes)`:"");
+function drawBill(){$("bill").innerHTML=B.map((b,i)=>`<button class="${i===bi?"on":""}" onclick="bi=${i};drawBill();drawWeb();drawCM()">${b.k}${b.b?` <small>${b.b}</small>`:""}</button>`).join("")}
+let ai=0;
+function drawWeb(){
+ $("addon").innerHTML=adds.map((a,i)=>`<button class="${i===ai?"on":""}" onclick="ai=${i};drawWeb()">${a.k}${a.c?` ($${a.c}/mes)`:""}</button>`).join("");
+ const a=adds[ai];
+ $("webg").innerHTML=web.map(w=>`<div class="card plan ${w.pop?"pop":""}">${w.pop?'<span class="pill">Recomendado</span>':""}
+ <small class="s">${w.s}</small><h3>Plan ${w.n}</h3><div class="price">$${w.p}${w.plus?"+":""}<small> USD · pago único</small></div>
+ <ul><li>${w.t}</li><li>${w.f}</li><li>Mantenimiento opcional: ${fmt(w.m)}</li></ul>
+ ${a.c?`<div class="mx"><b>Combo ${a.k}</b> (${a.d})<br>Recurrente: <b>${fmt(a.c+w.m)}</b><br>CM $${a.c} + mantenimiento $${w.m} por mes</div>`:""}
+ <a class="btn ${w.pop?"":"o"}" style="margin-top:16px;text-align:center" href="#contacto" onclick="pick('Web ${w.n}${a.c?" "+a.k:""}')">Elegir plan</a></div>`).join("")}
+const cm=[
+{n:"Inicial",s:"Presencia constante",p:120,l:["8 publicaciones/mes (2 por semana)","8 a 12 historias al mes","Imagen, carruseles y gráficos de marca","Copywriting enfocado en venta","Moderación básica de comentarios"],w:"Emprendedores, marcas personales y negocios locales."},
+{n:"Crecimiento",s:"Proyección y alcance",p:220,pop:1,l:["12 publicaciones/mes (3 por semana)","16 a 20 historias al mes","Carruseles + 2 Reels / TikToks","Copys persuasivos y hashtags","Respuesta a comentarios y plantilla de DMs"],w:"Pymes que buscan interacción, seguidores y prospectos."},
+{n:"Marca 360°",s:"Estrategia integral",p:380,l:["16 publicaciones/mes (4 por semana)","25+ historias al mes","4 a 6 Reels / TikToks con edición","Storytelling y tono de voz por red","Atención activa a DMs y reputación"],w:"Empresas maduras que necesitan producción y campañas."}];
+function drawCM(){$("cmg").innerHTML=cm.map(c=>`<div class="card plan ${c.pop?"pop":""}">${c.pop?'<span class="pill">Más elegido</span>':""}
+<small class="s">${c.s}</small><h3>Plan ${c.n}</h3><div class="price">$${chg(c.p)}<small> USD / ${B[bi].l}</small></div>${B[bi].n>1?`<small class="s">≈ $${Math.round(c.p*B[bi].f)}/mes</small>`:""}
+<p style="color:var(--mut);font-size:.88rem;margin:8px 0 0">${c.w}</p><ul>${c.l.map(x=>`<li>${x}</li>`).join("")}</ul>
+<a class="btn ${c.pop?"":"o"}" style="text-align:center" href="#contacto" onclick="pick('Redes ${c.n}')">Elegir plan</a></div>`).join("")}
+drawBill();drawWeb();drawCM();
+/* formulario */
+const opts=[...web.map(w=>"Web "+w.n),...cm.map(c=>"Redes "+c.n),"Combo Web + CM","Aún no lo sé"];
+$("pl").innerHTML=opts.map(o=>`<option>${o}</option>`).join("");
+function pick(v){if(![...$("pl").options].some(o=>o.value===v))$("pl").add(new Option(v));$("pl").value=v}
+function msg(){return `Hola Orbita Studio 👋\nSolicitud: ${$("ty").value}\nInterés: ${$("pl").value}\nFacturación: ${B[bi].k}\nNombre: ${$("fn").value}\nNegocio: ${$("fb").value}\nWhatsApp: ${$("ft").value}\nCorreo: ${$("fe").value}\nProyecto: ${$("fm").value}`}
+function go(kind){if(!$("f").reportValidity())return;
+ if(kind==="m")window.location.href=`mailto:${MAIL}?subject=${encodeURIComponent("Solicitud Orbita Studio - "+$("fn").value)}&body=${encodeURIComponent(msg())}`;
+ else window.open(wa(msg()),"_blank");
+ $("ok").style.display="block";$("ok").textContent="¡Gracias! Revisa la ventana que se abrió y confirma el envío.";}
+$("sm").onclick=()=>go("m");$("sw").onclick=()=>go("w");
+</script>
+</body>
+</html>
