@@ -32,7 +32,7 @@ nav .w{display:flex;justify-content:space-between;align-items:center;height:64px
 .dot::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--ac);top:-4px;right:-1px}
 nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:.92rem;font-weight:500;color:var(--mut)}
 nav ul a:hover{color:var(--tx)}
-@media(max-width:720px){nav ul{display:none}}
+@media(max-width:860px){nav ul{display:none}}
 .nr{display:flex;gap:10px;align-items:center}
 #th{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--tx);cursor:pointer;font-size:1.05rem}
 .hero{text-align:center;padding:104px 0 88px}
@@ -86,12 +86,31 @@ input,select,textarea{width:100%;padding:12px 13px;border-radius:10px;border:1px
 input:focus,select:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:-1px}
 #ok{display:none;color:var(--ok);font-weight:600;font-size:.92rem}
 .prow{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:22px}.prow .tabs,.prow .sel{margin:0}.sel small{font-size:.7rem;color:var(--ok);font-weight:700;margin-left:4px}
+/* términos y condiciones */
+.tc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.tc-head .sub{margin:0}
+.tc details{border:1px solid var(--line);border-radius:12px;background:var(--card);margin-bottom:10px;overflow:hidden}
+.tc summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tc summary::-webkit-details-marker{display:none}
+.tc summary::after{content:"+";color:var(--ac);font-size:1.4rem;line-height:1;font-weight:500;flex:none}
+.tc details[open] summary::after{content:"−"}
+.tc details[open] summary{color:var(--ac)}
+.tc .body{padding:0 20px 18px;color:var(--mut);font-size:.93rem}
+.tc .body p{margin:0 0 10px}
+.tc .body p:last-child,.tc .body ul:last-child{margin-bottom:0}
+.tc .body ul{margin:0 0 10px;padding-left:20px}
+.tc .body li{padding:2px 0}
+.tc .body a{color:var(--ac);text-decoration:underline}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--mut);margin:0;font-weight:400}
+.chk input{width:auto;margin-top:4px;flex:none}
+.chk a{color:var(--ac);text-decoration:underline}
 footer{text-align:center;color:var(--mut);padding:30px 20px;border-top:1px solid var(--line);font-size:.86rem}
+footer a{color:var(--ac);text-decoration:underline}
 </style>
 </head>
 <body>
 <nav><div class="w"><a href="#inicio" class="logo"><span class="dot"></span>Orbita Studio</a>
-<ul><li><a href="#servicios">Servicios</a></li><li><a href="#portafolio">Portafolio</a></li><li><a href="#planes">Planes</a></li><li><a href="#contacto">Contacto</a></li></ul>
+<ul><li><a href="#servicios">Servicios</a></li><li><a href="#portafolio">Portafolio</a></li><li><a href="#planes">Planes</a></li><li><a href="#terminos">Términos</a></li><li><a href="#contacto">Contacto</a></li></ul>
 <div class="nr"><button id="th" aria-label="Cambiar tema">🌙</button><a class="btn sm" href="#contacto">Cotizar</a></div></div></nav>
 
 <header class="hero" id="inicio"><div class="w">
@@ -123,16 +142,64 @@ footer{text-align:center;color:var(--mut);padding:30px 20px;border-top:1px solid
 <div id="m-cm" style="display:none"><div class="grid" id="cmg"></div><p class="note">Precio mensual. Los planes de Community Management incluyen diseño, redacción y programación de contenido.</p></div>
 </div></section>
 
+<section id="terminos" class="tc"><div class="w">
+<div class="tc-head"><div><span class="tag">Legal</span><h2>Términos y condiciones de contratación</h2><p class="sub">Transparencia desde el inicio: así trabajamos contigo. <br><small>Última actualización: 12/10/2026</small></p></div>
+<div class="row"><button class="btn o sm" id="tcOpen" type="button">Expandir todo</button><button class="btn o sm" id="tcClose" type="button">Contraer todo</button></div></div>
+
+<div id="tcList">
+<details><summary>Introducción</summary><div class="body"><p>Bienvenido/a a Orbita Studio. Estos términos y condiciones regulan la contratación de los servicios digitales ofrecidos a través de <a href="https://orbitastudio.vercel.app/" target="_blank" rel="noopener">https://orbitastudio.vercel.app/</a>, incluidos el desarrollo de páginas web, el diseño de soluciones digitales y los servicios de gestión de redes sociales (<em>community management</em>).</p><p>Al contratar alguno de nuestros servicios, el cliente declara haber leído estas condiciones y aceptarlas, junto con las condiciones particulares de la propuesta comercial correspondiente.</p></div></details>
+
+<details><summary>1. Identificación del prestador</summary><div class="body"><p>Los servicios son ofrecidos por [nombre completo o razón social], bajo el nombre comercial Orbita Studio, con domicilio en Guatemala.</p><p>Para consultas, cotizaciones o comunicaciones relacionadas con los servicios, el cliente puede contactar a través de:</p><ul><li>Correo electrónico: andresscastanedar@gmail.com.</li><li>Página web: https://orbitastudio.vercel.app/</li><li>Otros medios oficiales: @orbita.studio.ofi</li></ul></div></details>
+
+<details><summary>2. Servicios ofrecidos</summary><div class="body"><p>Los servicios disponibles pueden incluir:</p><ul><li>Diseño y desarrollo de páginas web.</li><li>Creación de catálogos digitales y otras herramientas web.</li><li>Mantenimiento y actualización de páginas web.</li><li>Gestión de redes sociales y creación de contenido digital.</li><li>Otros servicios digitales acordados individualmente con cada cliente.</li></ul><p>Las características, funcionalidades, entregables y limitaciones de cada servicio se especificarán en la propuesta comercial correspondiente.</p><p>La publicación de un servicio en la página web no implica que todas sus características estén incluidas en cualquier contratación.</p></div></details>
+
+<details><summary>3. Cotizaciones y contratación</summary><div class="body"><p>Las personas interesadas podrán solicitar una cotización mediante los canales de contacto disponibles.</p><p>Cada propuesta comercial especificará, según corresponda, el servicio contratado, su alcance, los entregables, el precio, los plazos estimados, la forma de pago y cualquier condición particular relevante.</p><p>Salvo que la propuesta indique otro plazo, las cotizaciones tendrán una vigencia de quince (15) días calendario desde su emisión.</p><p>Un proyecto se considerará contratado cuando exista una aceptación documentada de la propuesta y se hayan cumplido las condiciones de inicio acordadas.</p><p>Cuando corresponda, la aceptación podrá realizarse mediante firma manuscrita, firma electrónica u otro medio de aceptación que permita conservar evidencia del acuerdo.</p><p>Estas condiciones generales complementan la propuesta comercial. Si existe una contradicción entre ambas respecto de una condición específica del proyecto, prevalecerá la condición particular expresamente acordada para dicho proyecto, siempre que sea legalmente válida.</p></div></details>
+
+<details><summary>4. Precios y pagos</summary><div class="body"><p>Los precios serán comunicados en la cotización correspondiente y estarán expresados en la moneda indicada en ella.</p><p>Salvo que se acuerde algo distinto por escrito, los proyectos de desarrollo web podrán requerir un anticipo del cincuenta por ciento (50 %) para comenzar y el pago del saldo conforme a las condiciones de entrega establecidas en la propuesta.</p><p>Los servicios recurrentes, como la gestión de redes sociales o el mantenimiento web, tendrán la periodicidad y las fechas de pago especificadas en su propuesta.</p><p>Los gastos de terceros, incluidas las compras de dominios, alojamiento web, licencias, suscripciones y publicidad pagada, no estarán incluidos salvo indicación expresa.</p><p>Los pagos deberán efectuarse por los medios acordados entre las partes. Se proporcionará la documentación tributaria que corresponda conforme a la legislación aplicable.</p></div></details>
+
+<details><summary>5. Alcance del trabajo y servicios adicionales</summary><div class="body"><p>El prestador realizará las tareas expresamente incluidas en la propuesta aceptada.</p><p>Las funcionalidades nuevas, páginas adicionales, cambios sustanciales de diseño, publicaciones extra u otras solicitudes que excedan el alcance contratado podrán generar costes adicionales y modificaciones en los plazos.</p><p>Estos trabajos adicionales deberán ser comunicados y aprobados por el cliente antes de su ejecución.</p><p>Las solicitudes de modificación no se considerarán incluidas automáticamente por el simple hecho de estar relacionadas con el proyecto original.</p></div></details>
+
+<details><summary>6. Plazos y colaboración del cliente</summary><div class="body"><p>Los plazos de ejecución se indicarán en la propuesta comercial y dependerán de la naturaleza del proyecto.</p><p>El cliente deberá facilitar oportunamente los textos, imágenes, logotipos, accesos, información y aprobaciones necesarios para realizar el trabajo.</p><p>Los retrasos ocasionados por la falta de materiales, respuestas o aprobaciones del cliente podrán requerir una modificación razonable del calendario, que será comunicada por escrito.</p><p>Si surge alguna circunstancia que afecte significativamente la ejecución del proyecto, ambas partes procurarán acordar una solución razonable.</p></div></details>
+
+<details><summary>7. Revisiones y aprobación de entregables</summary><div class="body"><p>La cantidad de revisiones incluidas se establecerá en la propuesta comercial.</p><p>Las revisiones comprenderán ajustes razonables sobre el trabajo contratado, pero no necesariamente la incorporación de nuevas funcionalidades o la modificación completa de una solución previamente aprobada.</p><p>El cliente deberá revisar los entregables y comunicar sus observaciones dentro del plazo acordado.</p><p>La aprobación de un entregable no elimina las obligaciones pendientes del prestador respecto de defectos o incumplimientos del alcance contratado que correspondan conforme a la legislación aplicable.</p></div></details>
+
+<details><summary>8. Cancelaciones y terminación del servicio</summary><div class="body"><p>El cliente podrá solicitar la cancelación de un proyecto mediante comunicación escrita.</p><p>Cuando se produzca una cancelación, las partes determinarán los importes correspondientes al trabajo efectivamente realizado, los gastos previamente autorizados y los pagos efectuados, de acuerdo con lo pactado y con la legislación aplicable.</p><p>Las condiciones particulares de cancelación, reembolso o terminación podrán establecerse en la propuesta comercial.</p><p>En los servicios recurrentes, el procedimiento y el plazo de aviso para cancelar se indicarán en la propuesta o acuerdo correspondiente.</p><p>Ninguna cláusula de cancelación tendrá como finalidad eliminar derechos de devolución, desistimiento u otros derechos que sean legalmente aplicables al cliente.</p></div></details>
+
+<details><summary>9. Propiedad intelectual y derechos de uso</summary><div class="body"><p>Los derechos sobre el código, diseños, textos, imágenes, marcas, componentes y demás materiales se regirán por los acuerdos específicos del proyecto y por las licencias aplicables.</p><p>Salvo que se pacte algo diferente, la entrega o transferencia de los derechos acordados sobre los elementos creados específicamente para el cliente quedará sujeta al pago completo del importe correspondiente.</p><p>Las herramientas, bibliotecas, componentes, plantillas, recursos de terceros y materiales preexistentes conservarán los derechos de sus respectivos titulares.</p><p>El cliente será responsable de contar con autorización para utilizar los materiales que proporcione al prestador, incluidos logotipos, fotografías, textos y otros recursos protegidos.</p><p>El prestador no transferirá derechos que no le pertenezcan ni concederá licencias incompatibles con las condiciones de terceros.</p></div></details>
+
+<details><summary>10. Dominios, alojamiento y servicios de terceros</summary><div class="body"><p>Los dominios, el alojamiento web, las plataformas de publicación, las herramientas de análisis y otros servicios externos estarán sujetos a las condiciones de sus respectivos proveedores.</p><p>Salvo acuerdo expreso, sus costes no estarán incluidos en el precio del proyecto.</p><p>Siempre que sea viable, las cuentas y los activos digitales contratados específicamente para el cliente se registrarán a nombre de este.</p><p>El prestador no controla las decisiones, cambios de políticas, interrupciones ni modificaciones de precios de los proveedores externos. No obstante, colaborará razonablemente con el cliente para atender los problemas que estén dentro del alcance del servicio contratado.</p></div></details>
+
+<details><summary>11. Mantenimiento, soporte y garantías</summary><div class="body"><p>El mantenimiento, las actualizaciones y el soporte posteriores a la entrega solo estarán incluidos cuando se especifiquen en la propuesta comercial.</p><p>Si no se ha contratado mantenimiento, cualquier trabajo posterior podrá cotizarse por separado.</p><p>El prestador procurará entregar los servicios conforme a las especificaciones acordadas y corregir los defectos atribuibles a su trabajo que se encuentren dentro del alcance contratado, conforme a las condiciones pactadas y a la legislación aplicable.</p><p>No se garantiza la ausencia absoluta de errores, interrupciones o incompatibilidades, especialmente cuando dependan de servicios externos, cambios tecnológicos o factores ajenos al control del prestador.</p><p>Esta sección no excluye las garantías ni los derechos que legalmente correspondan al cliente.</p></div></details>
+
+<details><summary>12. Servicios de gestión de redes sociales</summary><div class="body"><p>En los servicios de <em>community management</em>, la cantidad de publicaciones, plataformas administradas, formatos de contenido, frecuencia de publicación, atención de mensajes y demás tareas incluidas se especificarán en la propuesta comercial.</p><p>El cliente deberá revisar y aprobar los contenidos cuando así se haya acordado, además de proporcionar información veraz sobre sus productos, servicios y promociones.</p><p>El presupuesto destinado a publicidad pagada no estará incluido salvo indicación expresa.</p><p>El prestador no garantiza cantidades específicas de seguidores, interacciones, ventas, clientes potenciales ni resultados comerciales, ya que estos dependen de múltiples factores, incluidos el mercado, el presupuesto, la oferta comercial y los algoritmos de las plataformas.</p><p>El prestador realizará las actividades contratadas con diligencia y comunicará los avances o incidencias relevantes dentro del alcance acordado.</p></div></details>
+
+<details><summary>13. Obligaciones y responsabilidad del cliente</summary><div class="body"><p>El cliente se compromete a proporcionar información exacta, mantener la titularidad o autorización de los materiales que entregue y utilizar los servicios contratados conforme a la ley.</p><p>El cliente será responsable de la legalidad de sus productos, servicios, afirmaciones comerciales y materiales proporcionados, sin perjuicio de las obligaciones que correspondan al prestador por su propio trabajo.</p><p>El cliente deberá mantener protegidas sus credenciales de acceso y comunicar oportunamente cualquier acceso no autorizado del que tenga conocimiento.</p></div></details>
+
+<details><summary>14. Confidencialidad y tratamiento de información</summary><div class="body"><p>Las partes procurarán mantener confidencial la información no pública a la que accedan durante la ejecución del proyecto y utilizarla únicamente para los fines acordados.</p><p>Los datos personales y las credenciales que el cliente facilite se tratarán únicamente en la medida necesaria para prestar los servicios y cumplir las obligaciones aplicables.</p><p>Cuando el proyecto requiera un tratamiento de datos personales más amplio o el acceso a información sensible de carácter comercial, las partes podrán establecer condiciones adicionales de confidencialidad, seguridad, acceso, conservación y eliminación.</p><p>El cliente deberá evitar enviar información personal innecesaria o credenciales por canales que no sean adecuados para ello.</p></div></details>
+
+<details><summary>15. Uso del trabajo en el portafolio</summary><div class="body"><p>El prestador podrá solicitar autorización al cliente para mostrar el proyecto terminado en su portafolio profesional, en su página web o en sus redes sociales.</p><p>La publicación del proyecto no se realizará cuando exista una obligación de confidencialidad incompatible, una prohibición acordada o una restricción legal aplicable.</p><p>La autorización para mostrar el trabajo no implica permiso para divulgar información confidencial, datos personales innecesarios ni materiales que el cliente no esté autorizado a compartir.</p></div></details>
+
+<details><summary>16. Disponibilidad de la página web y servicios digitales</summary><div class="body"><p>El prestador no puede garantizar la disponibilidad ininterrumpida de páginas web, plataformas de terceros o servicios de alojamiento.</p><p>Cuando se contrate mantenimiento o soporte, su alcance, horario de atención y condiciones de respuesta se establecerán en el acuerdo correspondiente.</p><p>El prestador no será responsable de interrupciones provocadas exclusivamente por proveedores externos, actuaciones del cliente o circunstancias fuera de su control, sin perjuicio de las responsabilidades que legalmente puedan corresponderle.</p></div></details>
+
+<details><summary>17. Modificaciones de estos términos</summary><div class="body"><p>El prestador podrá actualizar estos términos para reflejar cambios en sus servicios, procedimientos o requisitos legales.</p><p>La versión aplicable a cada contratación será la que se haya comunicado o incorporado al acuerdo correspondiente en el momento de su aceptación, salvo que una modificación posterior sea aceptada válidamente por las partes o resulte exigible por ley.</p><p>Las modificaciones de estos términos no alterarán retroactivamente las condiciones particulares de un proyecto ya contratado sin una base válida para ello.</p></div></details>
+
+<details><summary>18. Legislación aplicable y resolución de controversias</summary><div class="body"><p>Estos términos se interpretarán conforme a la legislación aplicable de la República de Guatemala.</p><p>En caso de desacuerdo, las partes procurarán resolver la situación mediante comunicación directa y de buena fe.</p><p>Si no se alcanza una solución, cualquiera de las partes podrá acudir a los mecanismos administrativos, de conciliación o judiciales que correspondan conforme a la legislación aplicable.</p><p>Nada de lo establecido en estos términos pretende limitar los derechos irrenunciables que correspondan al cliente.</p></div></details>
+
+<details><summary>19. Contacto</summary><div class="body"><p>Para consultas relacionadas con estos términos o con los servicios contratados, puedes comunicarte a través de:</p><p><strong>Marca comercial:</strong> Orbita Studio<br><strong>Correo electrónico:</strong> andresscastanedar@gmail.com<br><strong>Página web:</strong> <a href="https://orbitastudio.vercel.app/" target="_blank" rel="noopener">https://orbitastudio.vercel.app/</a></p></div></details>
+</div>
+</div></section>
+
 <section class="cta" id="contacto"><div class="w"><div class="grid">
 <div><span class="tag">Hablemos</span><h2>Agenda una llamada o pide tu cotización</h2><p class="sub" style="margin-bottom:22px">Cuéntanos de tu negocio y te respondemos en menos de 24 horas con una propuesta a tu medida.</p><a class="btn wa" id="waCta" target="_blank" rel="noopener" href="#">Prefiero WhatsApp directo</a></div>
 <form id="f" onsubmit="return false"><div class="two"><div><label>Nombre</label><input id="fn" required></div><div><label>Negocio</label><input id="fb"></div></div>
 <div class="two"><div><label>WhatsApp / Teléfono</label><input id="ft" required></div><div><label>Correo</label><input id="fe" type="email"></div></div>
 <div class="two"><div><label>Me interesa</label><select id="pl"></select></div><div><label>Solicitud</label><select id="ty"><option>Cotización personalizada</option><option>Agendar llamada</option></select></div></div>
 <div><label>Cuéntanos tu proyecto</label><textarea id="fm" rows="3"></textarea></div>
+<label class="chk"><input type="checkbox" id="fa" required><span>He leído y acepto los <a href="#terminos">términos y condiciones de contratación</a>.</span></label>
 <div class="row" style="justify-content:flex-start"><button class="btn" id="sm">Enviar por correo</button><button class="btn o" id="sw">Enviar por WhatsApp</button></div>
 <div id="ok"></div></form>
 </div></div></section>
-<footer>© 2026 Orbita Studio · Páginas web y Community Management</footer>
+<footer>© 2026 Orbita Studio · Páginas web y Community Management · <a href="#terminos">Términos y condiciones</a></footer>
 
 <script>
 const WA="50239221698", MAIL="andresscastanedar@gmail.com";
@@ -152,6 +219,9 @@ th.onclick=()=>setT(root.dataset.theme==="dark"?"light":"dark");
 function tabs(sel,fn){document.querySelectorAll(sel).forEach(b=>b.onclick=()=>{b.parentNode.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));b.classList.add("on");fn(b)})}
 tabs("[data-p]",b=>{document.querySelectorAll(".pane").forEach(x=>x.classList.remove("on"));$(b.dataset.p).classList.add("on")});
 tabs("[data-m]",b=>{$("m-web").style.display=b.dataset.m==="web"?"block":"none";$("m-cm").style.display=b.dataset.m==="cm"?"block":"none"});
+/* términos: expandir / contraer */
+const tcAll=o=>document.querySelectorAll("#tcList details").forEach(d=>d.open=o);
+$("tcOpen").onclick=()=>tcAll(true);$("tcClose").onclick=()=>tcAll(false);
 /* portafolio */
 PROJ.forEach((p,i)=>{$("p"+(i+1)).innerHTML=`<div class="frame"><div class="bar"><i></i><i></i><i></i><span>🔒 ${p.url?p.url.replace(/^https?:\/\//,""):p.host}</span></div>
 <div class="pv"><div class="info"><h3>${p.name}</h3><ul>${p.pts.map(x=>`<li>${x}</li>`).join("")}</ul>${p.url?`<a class="btn" target="_blank" rel="noopener" href="${p.url}">Abrir proyecto ↗</a>`:""}</div>
@@ -188,7 +258,7 @@ drawBill();drawWeb();drawCM();
 const opts=[...web.map(w=>"Web "+w.n),...cm.map(c=>"Redes "+c.n),"Combo Web + CM","Aún no lo sé"];
 $("pl").innerHTML=opts.map(o=>`<option>${o}</option>`).join("");
 function pick(v){if(![...$("pl").options].some(o=>o.value===v))$("pl").add(new Option(v));$("pl").value=v}
-function msg(){return `Hola Orbita Studio 👋\nSolicitud: ${$("ty").value}\nInterés: ${$("pl").value}\nFacturación: ${B[bi].k}\nNombre: ${$("fn").value}\nNegocio: ${$("fb").value}\nWhatsApp: ${$("ft").value}\nCorreo: ${$("fe").value}\nProyecto: ${$("fm").value}`}
+function msg(){return `Hola Orbita Studio 👋\nSolicitud: ${$("ty").value}\nInterés: ${$("pl").value}\nFacturación: ${B[bi].k}\nNombre: ${$("fn").value}\nNegocio: ${$("fb").value}\nWhatsApp: ${$("ft").value}\nCorreo: ${$("fe").value}\nProyecto: ${$("fm").value}\nAcepto los términos y condiciones: Sí`}
 function go(kind){if(!$("f").reportValidity())return;
  if(kind==="m")window.location.href=`mailto:${MAIL}?subject=${encodeURIComponent("Solicitud Orbita Studio - "+$("fn").value)}&body=${encodeURIComponent(msg())}`;
  else window.open(wa(msg()),"_blank");
